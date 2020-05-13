@@ -1,0 +1,34 @@
+﻿namespace ExceptionHandlingDemo1
+{
+
+    using System;
+
+    internal class Program
+    {
+        private static void Print(string s)
+        {
+            int.Parse(s);
+            Console.WriteLine("you entered valid Int32 number {0}.", s);
+        }
+
+        private static void Main()
+        {
+            var s = Console.ReadLine();
+            try
+            {
+                //int.Parse(s);
+                //Console.WriteLine("You entered valid intiger number: {0}.", s);
+                Print(s);
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Invalid integer number!");
+            }
+            catch (OverflowException)
+            {
+                Console.WriteLine("The number is too big to fit in intiger");
+            }
+        }
+    }
+
+}
